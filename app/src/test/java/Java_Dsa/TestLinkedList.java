@@ -56,8 +56,22 @@ public class TestLinkedList {
 
     }
 
+//    @Test
+//    public void findK() {
+//
+//        LinkedLists LinkedListsTest = new LinkedLists();
+//        LinkedListsTest.insert(2);
+//        LinkedListsTest.insert(7);
+//        LinkedListsTest.insert(1);
+//        LinkedListsTest.insert(9);
+//
+//
+//        assertEquals(1, LinkedListsTest.findK(1));
+//
+//    }
+
     @Test
-    public void findK() {
+    public void TestzipLL() {
 
         LinkedLists LinkedListsTest = new LinkedLists();
         LinkedListsTest.insert(2);
@@ -65,10 +79,19 @@ public class TestLinkedList {
         LinkedListsTest.insert(1);
         LinkedListsTest.insert(9);
 
+        LinkedLists LinkedListsTest2 = new LinkedLists();
+        LinkedListsTest2.insert(2);
+        LinkedListsTest2.insert(7);
+        LinkedListsTest2.insert(1);
+        LinkedListsTest2.insert(9);
 
-        assertEquals(1, LinkedListsTest.findK(1));
+        LinkedLists result = LinkedLists.zipLL(LinkedListsTest, LinkedListsTest2);
+        String x = "HEAD 9 -> 9 -> 1 -> 7 -> NULL";
+        System.out.println(result);
+        assertEquals(x,result.toString());
 
     }
+
 
 
 
