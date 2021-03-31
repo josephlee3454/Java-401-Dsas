@@ -25,8 +25,97 @@ public class LinkedLists {
 
         return "Node Inserted";
     }
+    public void apeend(int value) {
+        Node curr;
+        Node node = new Node(value);
+        if (this.head == null) {
+            this.head = node;
+        }
+        curr = this.head;
+        while (curr != null) {
+            System.out.println(curr);
+            if (curr.next == null) {
 
-    public Boolean includes(int val) {
+                curr.next = node;
+                break;
+            }
+            curr = curr.next;
+            System.out.println(curr);
+        }
+    }
+    public void insertBef(int value, int valRep){
+            Node temp;
+            Node curr;
+            Node node = new Node(value);
+            if (this.head == null) {
+                this.head = node;
+            }
+            curr = this.head;
+            while(curr != null) {
+                if (curr.next.value == valRep) {
+                    temp = curr.next;
+                    curr.next = node;
+                    curr.next.next = temp;
+                    break;
+                }
+                curr = curr.next;
+            }
+
+
+        }
+
+    public void inserAfter(int value, int valRep) {
+        Node temp;
+        Node curr;
+        Node node = new Node(value);
+        if (this.head == null) {
+            this.head = node;
+        }
+        curr = this.head;
+        while (curr != null) {
+            if (curr.value == valRep) {
+                temp = curr.next.next;
+                curr.next = node;
+                curr.next.next = temp;
+                break;
+            }
+            curr = curr.next;
+        }
+
+
+    }
+
+    public int findK(int k) {
+        Node curr = this.head;
+        Node curr2 = this.head;
+        int count = k;
+
+        if (this.head == null) {
+            return -1;
+        }
+
+
+        while (curr != null) {
+            System.out.println(curr.value);
+            System.out.println(curr2.value);
+
+            if(count > 0){
+               count --;
+               curr = curr.next;
+               continue;
+            }
+            curr = curr.next;
+            curr2 = curr2.next;
+        }
+
+
+        return curr2.value;
+    }
+
+
+
+
+    public boolean includes(int val) {
         Node Curr = this.head;
         while (Curr != null) {
             if (Curr != null){
@@ -38,7 +127,7 @@ public class LinkedLists {
         System.out.println("val not found");
         return false;
     }
-    public String toString(Node node){
+    public String toString(){
         Node current = this.head;
         String finalString= "HEAD -> ";
 
@@ -53,7 +142,12 @@ public class LinkedLists {
 
         return finalString;
     }
-}
+
+
+    }
+
+
+
 
 
 class Node {
