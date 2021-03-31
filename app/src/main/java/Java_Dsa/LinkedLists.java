@@ -64,7 +64,7 @@ public class LinkedLists {
 
         }
 
-    public void inserAfter(int value, int valRep){
+    public void inserAfter(int value, int valRep) {
         Node temp;
         Node curr;
         Node node = new Node(value);
@@ -72,7 +72,7 @@ public class LinkedLists {
             this.head = node;
         }
         curr = this.head;
-        while(curr != null) {
+        while (curr != null) {
             if (curr.value == valRep) {
                 temp = curr.next.next;
                 curr.next = node;
@@ -85,9 +85,32 @@ public class LinkedLists {
 
     }
 
+    public int findK(int k) {
+        Node curr = this.head;
+        Node curr2 = this.head;
+        int count = k;
+
+        if (this.head == null) {
+            return -1;
+        }
 
 
+        while (curr != null) {
+            System.out.println(curr.value);
+            System.out.println(curr2.value);
 
+            if(count > 0){
+               count --;
+               curr = curr.next;
+               continue;
+            }
+            curr = curr.next;
+            curr2 = curr2.next;
+        }
+
+
+        return curr2.value;
+    }
 
 
 

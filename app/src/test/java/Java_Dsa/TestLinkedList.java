@@ -50,11 +50,26 @@ public class TestLinkedList {
         LinkedListsTest.insert(7);
         LinkedListsTest.insert(1);
         LinkedListsTest.insert(9);
-        LinkedListsTest.inserAfter(77,7);
+
 
         assertEquals("HEAD ->  9 -> 1 -> 7 -> 77 -> null", LinkedListsTest.toString());
 
     }
+
+    @Test
+    public void findK() {
+
+        LinkedLists LinkedListsTest = new LinkedLists();
+        LinkedListsTest.insert(2);
+        LinkedListsTest.insert(7);
+        LinkedListsTest.insert(1);
+        LinkedListsTest.insert(9);
+
+
+        assertEquals(1, LinkedListsTest.findK(1));
+
+    }
+
 
 
 }
