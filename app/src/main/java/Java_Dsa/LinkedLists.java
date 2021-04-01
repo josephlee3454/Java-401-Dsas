@@ -118,7 +118,7 @@ public class LinkedLists {
         if (LL1 == null) {
             return LL2;
         }
-        if (LL2.head == null) {
+        if (LL2 == null) {
             return LL1;
         }
         Node curr1 = LL1.head;
