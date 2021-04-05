@@ -2,7 +2,7 @@ package Java_Dsa;
 
 public class LinkedLists {
 
-    public Node head = null;
+    public Node<N> head = null;
 
     public static void main(String[] args) {
         LinkedLists LinkedListsTest = new LinkedLists();
@@ -15,7 +15,7 @@ public class LinkedLists {
     }
 
     public String insert(int value) {
-        Node node = new Node(value);
+        Node<N> node = new Node<N>(value);
         if (this.head != null) {
 
             node.next = this.head;
@@ -27,8 +27,8 @@ public class LinkedLists {
     }
 
     public void apeend(int value) {
-        Node curr;
-        Node node = new Node(value);
+        Node<N> curr;
+        Node<N> node = new Node<N>(value);
         if (this.head == null) {
             this.head = node;
         }
@@ -46,9 +46,9 @@ public class LinkedLists {
     }
 
     public void insertBef(int value, int valRep) {
-        Node temp;
-        Node curr;
-        Node node = new Node(value);
+        Node<N> temp;
+        Node<N> curr;
+        Node<N> node = new Node<N>(value);
         if (this.head == null) {
             this.head = node;
         }
@@ -67,9 +67,9 @@ public class LinkedLists {
     }
 
     public void inserAfter(int value, int valRep) {
-        Node temp;
-        Node curr;
-        Node node = new Node(value);
+        Node<N> temp;
+        Node<N> curr;
+        Node<N> node = new Node<N>(value);
         if (this.head == null) {
             this.head = node;
         }
@@ -88,8 +88,8 @@ public class LinkedLists {
     }
 
     public int findK(int k) {
-        Node curr = this.head;
-        Node curr2 = this.head;
+        Node<N> curr = this.head;
+        Node<N> curr2 = this.head;
         int count = k;
 
         if (this.head == null) {
@@ -121,9 +121,9 @@ public class LinkedLists {
         if (LL2 == null) {
             return LL1;
         }
-        Node curr1 = LL1.head;
-        Node curr2 = LL2.head;
-        Node holder;
+        Node<N> curr1 = LL1.head;
+        Node<N> curr2 = LL2.head;
+        Node<N> holder;
         while (curr1 != null) {
 
             holder = curr1.next;
@@ -134,25 +134,25 @@ public class LinkedLists {
 
         }
 
-           return LL1;
+        return LL1;
     }
 
 
 
     public boolean includes(int val) {
-        Node Curr = this.head;
+        Node<N> Curr = this.head;
         while (Curr != null) {
             if (Curr != null){
                 System.out.println("val found");
-            return true;
-        }
+                return true;
+            }
             Curr = Curr.next;
-    }
+        }
         System.out.println("val not found");
         return false;
     }
     public static StringBuilder toString(LinkedLists ll) {
-        Node node = ll.head;
+        Node<N> node = ll.head;
         StringBuilder str = new StringBuilder();
         str.append("HEAD ");
         while(node != null) {
@@ -164,7 +164,7 @@ public class LinkedLists {
     }
     @Override
     public String toString(){
-        Node node = this.head;
+        Node<N> node = this.head;
         StringBuilder str = new StringBuilder();
         str.append("HEAD ");
         while(node != null) {
@@ -178,21 +178,21 @@ public class LinkedLists {
     }
 
 
-    }
+}
 
 
 
 
 
-class Node {
+class Node<N> {
 
     public int value;
-    Node next = null;
+    Node<N> next = null;
 
     public Node(int value) {
         this.value = value;
     }
 
-    }
+}
 
 
