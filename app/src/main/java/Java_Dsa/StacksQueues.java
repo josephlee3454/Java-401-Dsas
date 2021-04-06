@@ -47,12 +47,12 @@ public class StacksQueues {
 
     }
 
-    private String toString (Node<N> current){
-
-        if (current == null){
-            return null;
-        }
-        return String.format("{%s} -> %s", current.value, toString(current.next));
-
-    }
+//    private String toString (Node<N> current){
+//
+//        if (current == null){
+//            return null;
+//        }
+//        return String.format("{%s} -> %s", current.value, toString(current.next));
+//
+//    }
 }
