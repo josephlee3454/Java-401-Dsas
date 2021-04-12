@@ -13,9 +13,9 @@ public class PesudoQueuesWStacks<Q> {
         enqueueStack = new Stack<>(); // we add to this stack hence the enqueue stack name
 
     }
-    public void enqueue(Q value){ // pass in Q  Value which is the stacks node value
+    public void enqueue(Q value){
 
-        while(dequeueStack != null){ // while the dequeue stack isnt null we wil pop everything and push itno the next stack untill it is null
+        while(dequeueStack != null){
             enqueueStack.push(dequeueStack.pop());
         }
         enqueueStack.push(value);
@@ -23,13 +23,13 @@ public class PesudoQueuesWStacks<Q> {
 
 
     public Q dequeue(){
-        if( dequeueStack == null && enqueueStack == null){ //  check to see if both stack are empty becuase you cant take something way if its not there
+        if( dequeueStack == null && enqueueStack == null){
             return null;
         }
         while(enqueueStack != null){
-            dequeueStack.push(enqueueStack.pop());// the objective is to move it to the dequeue stack to remove
+            dequeueStack.push(enqueueStack.pop());
         }
-        return dequeueStack.pop(); // this will be the value after it has been pushed to the second stack
+        return dequeueStack.pop();
     }
 
     public boolean isEmpty(){
@@ -37,6 +37,12 @@ public class PesudoQueuesWStacks<Q> {
             return true;
         }
         return false;
+    }
+    public String toString () {
+
+        return dequeueStack.toString();
+//      out {2} -> {6} -> {12} -> null
+
     }
 
 }

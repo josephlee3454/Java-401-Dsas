@@ -25,3 +25,12 @@
 
 ## toString()
 * takes in all node values and formats it into a string 
+
+# Pesudo queueus
+## enqueue
+* takes in a value 
+
+
+
+
+
